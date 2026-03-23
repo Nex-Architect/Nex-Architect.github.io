@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DustVault</title>
+  <meta name="description" content="Local-first developer CLI for packaging codebases into AI-friendly bundles and inspecting snapshots offline.">
+  <style>
+    :root {
+      --bg: #0b1020;
+      --card: #121933;
+      --soft: #1a2345;
+      --text: #eef2ff;
+      --muted: #b8c1e6;
+      --accent: #7aa2ff;
+      --border: #2a376b;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: linear-gradient(180deg, #0b1020 0%, #0f1530 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+
+    .hero {
+      padding: 48px 0 28px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(122, 162, 255, 0.08);
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.15;
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: 44px;
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 14px;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: var(--muted);
+      margin-top: 0;
+    }
+
+    .lead {
+      font-size: 18px;
+      max-width: 820px;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid var(--border);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #08101f;
+      border-color: var(--accent);
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      background: transparent;
+    }
+
+    .section {
+      margin-top: 42px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: rgba(18, 25, 51, 0.92);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    ul {
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    li { margin-bottom: 8px; }
+
+    code {
+      background: var(--soft);
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 3px 7px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    pre {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+      overflow-x: auto;
+      color: var(--text);
+    }
+
+    .demo-img {
+      width: 100%;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: var(--card);
+    }
+
+    .footer {
+      margin-top: 56px;
+      padding-top: 22px;
+      border-top: 1px solid var(--border);
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .price-note {
+      font-size: 14px;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 34px; }
+      .lead { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="eyebrow">Local-first developer CLI</div>
+      <h1>DustVault</h1>
+      <p class="lead">
+        DustVault is a local-first developer CLI for turning codebases into AI-friendly bundles
+        and inspecting project snapshots offline. It supports project ingest, bundle export,
+        diff, search, extract, and tree-based inspection workflows without requiring a hosted service.
+      </p>
+
+      <div class="button-row">
+        <a class="btn btn-primary" href="mailto:you@example.com?subject=DustVault%20Licensing">Contact for access</a>
+        <a class="btn btn-secondary" href="#tiers">View license tiers</a>
+      </div>
+      <p class="price-note">Replace <code>you@example.com</code> with your real sales email.</p>
+    </section>
+
+    <section class="section">
+      <h2>What DustVault does</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Package codebases for AI workflows</h3>
+          <p>Turn local projects into portable, AI-friendly bundles that are easier to inspect, review, and reuse.</p>
+        </div>
+        <div class="card">
+          <h3>Inspect snapshots offline</h3>
+          <p>Use diff, search, extract, stats, and tree tools to inspect project state without relying on a hosted backend.</p>
+        </div>
+        <div class="card">
+          <h3>Keep everything local</h3>
+          <p>Run on your own machine with local storage and local workflows, backed by SQLite for vault operations.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Core features</h2>
+      <ul>
+        <li>Ingest local projects into a SQLite-backed vault</li>
+        <li>Export AI-friendly code bundles from local source trees</li>
+        <li>Inspect bundles with diff, search, extract, tree, and stats commands</li>
+        <li>Work locally without a required hosted service</li>
+        <li>Keep project snapshots portable and easy to review</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Example commands</h2>
+      <pre><code>dustvault ingest ./my_project
+dustvault export-bundle ./my_project
+dustvault search bundle.txt "FastAPI"
+dustvault tree bundle.txt
+dustvault diff old_bundle.txt new_bundle.txt</code></pre>
+    </section>
+
+    <section class="section" id="tiers">
+      <h2>License tiers</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>DustVault Personal</h3>
+          <p>For individual developers.</p>
+          <ul>
+            <li>1 named user</li>
+            <li>Up to 3 devices</li>
+            <li>1 active project</li>
+            <li>Source access included</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>DustVault Team</h3>
+          <p>For internal use by small teams.</p>
+          <ul>
+            <li>Up to 5 named users</li>
+            <li>Up to 15 devices</li>
+            <li>Unlimited internal projects</li>
+            <li>Source access included</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>DustVault OEM / Redistribution</h3>
+          <p>For embedding, redistribution, managed-service use, or white-label agreements.</p>
+          <ul>
+            <li>Custom agreement</li>
+            <li>Custom usage rights</li>
+            <li>Custom support terms</li>
+            <li>Contact for licensing</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Demo</h2>
+      <p>Add screenshots in the <code>/assets</code> folder and update the image path below.</p>
+      <img class="demo-img" src="/assets/dustvault-1.png" alt="DustVault screenshot">
+    </section>
+
+    <section class="section">
+      <h2>Why local-first</h2>
+      <p>
+        DustVault is built for developers who want bundle generation and snapshot inspection without depending on a hosted platform.
+        It keeps workflows local, transparent, and easy to integrate into existing development environments.
+      </p>
+    </section>
+
+    <footer class="footer">
+      <p><a href="/">Back to home</a></p>
+      <p>Licensing available for Personal, Team, and OEM / Redistribution use.</p>
+      <p>Contact: <a href="mailto:you@example.com">you@example.com</a></p>
+    </footer>
+  </div>
+</body>
+</html>
